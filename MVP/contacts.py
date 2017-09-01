@@ -80,7 +80,6 @@ def delete():
 
 
 create_table()
-#input_test()
 update()
 
 
