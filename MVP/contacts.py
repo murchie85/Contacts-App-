@@ -80,9 +80,51 @@ def delete():
 
 
 
+# event handler 
+def contactselect(event):
+	if contactList.curselection():
+		selectedcontact = contactList.get(contactList.curselection())
+		print(selectedcontact)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#basic window 
+root = Tk()   # blank window
+root.title("Contact List")
+root.geometry("800x600+450+150")
+# A Label and a Listbox
+headerlabel = Label(root, text="All Contacts")
+
+headerlabel.place(relx=0.01, rely=0.01, relheight=0.03, relwidth=0.64)
+# Now the listbox
+contactList = Listbox(root)
+
+# Bind an event <<>> is tkinter stuff, param2 the def Name
+contactList.bind("<<ListboxSelect>>", contactselect)
+
+
+contactList.place(relx=0.01, rely=0.04, relheight=0.98, relwidth=0.64)
+
+
+
 create_table()
+dynamic_data_entry()
+dynamic_data_entry('Mr DaTa', 'S74RF1337', '622-1701-(3)', 'lt.cmdr.data@enterprise.starfleet.alpha.mil.wa', '07010101101')
+read_from_db()
+
+for i in range (len(data)):
+	contactList.insert(END, data[i])
 
 
-
-c.close()
-conn.close()
+root.mainloop() #need to have this window continuously running 
