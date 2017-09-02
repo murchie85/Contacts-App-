@@ -31,7 +31,7 @@ c = conn.cursor()
 def create_table():
 	c.execute('CREATE TABLE IF NOT EXISTS allContacts(name TEXT, org TEXT, tel TEXT, email TEXT, mob TEXT)')
 
-
+# prototype function will be redundant
 def input_test():
 	c.execute("INSERT INTO allContacts VALUES('Adam McMurchie', 'Administrate', '01382 625789', 'murchie85@gmail.com', '07832141785' )")
 	conn.commit()
@@ -39,23 +39,20 @@ def input_test():
 	conn.close()
 
 # allows for inserting based upon parameratization 
-def dynamic_data_entry():
-	name = 'Adam'
-	org = 'Administrate'
-	tel = '01382765412'
-	email = adam@hotmail.com
-	mob = '0778965432'
+def dynamic_data_entry(name='Adam', org='Administrate', tel='01382765412', email='adam@hotmail.com', mob='0778965432'):
 	c.execute("INSERT INTO allContacts (name, org, tel, email, mob) VALUES (?, ?, ?, ?, ?)",
-	(name, org, tel, email, mob)) #MYSQL will use %s instead of ?
+	(name, org, tel, email, mob)) # note for going to server MYSQL will use %s instead of ?
 	conn.commit() # no need to close after commit, especially if doing multiple inserts
+
+
 
 #Read data from our contacts 
 def read_from_db():
 	c.execute('SELECT * FROM allContacts')
+	global data
 	data = c.fetchall()
-	for row in data:
 
-		print(row)
+	# should become redundant 
 def update():
 	c.execute('SELECT * FROM allContacts')
 	[print(row) for row in c.fetchall()]
@@ -67,6 +64,7 @@ def update():
 	c.execute('SELECT * FROM allContacts')
 	[print(row) for row in c.fetchall()]
 
+	# should become redundant 
 def delete():
 	c.execute('SELECT * FROM allContacts')
 	[print(row) for row in c.fetchall()]
@@ -81,8 +79,9 @@ def delete():
 
 
 
+
 create_table()
-update()
+
 
 
 c.close()
