@@ -86,6 +86,17 @@ def contactselect(event):
 		selectedcontact = contactList.get(contactList.curselection())
 		print(selectedcontact)
 
+def addcontact():
+	global addname, addorg, addtel, addemail, addmob
+	print("Adding " + addname.get() + " to Contact List")
+	dynamic_data_entry(addname.get(), addorg.get(), addtel.get(), addemail.get(), addmob.get())
+	# Clear vars and consequently textboxes as they are linked.
+	addname.set("")
+	addorg.set("")
+	addtel.set("")
+	addemail.set("")
+	addmob.set("")
+	refreshlist()
 
 
 
@@ -93,8 +104,7 @@ def contactselect(event):
 
 
 
-
-
+#*****************************TKINTER AND GUI STUFF *********************************#
 
 
 
@@ -117,8 +127,6 @@ contactList.bind("<<ListboxSelect>>", contactselect)
 contactList.place(relx=0.01, rely=0.04, relheight=0.98, relwidth=0.64)
 
 
-
-
 # A Label frame to group the add contact form.
 addcontactframe = LabelFrame(root, text="Add Contact")
 addcontactframe.place(relx=0.66, rely=0.01, relheight=0.25, relwidth=0.33)
@@ -134,9 +142,50 @@ lblmob = Label(addcontactframe, text="Mobile: ")
 lblmob.place(relx=0.01, rely=0.60, relwidth=0.35, relheight=0.15)
 
 
+# Pre assign stringVars for our Entry boxes
+addname = tk.StringVar()
+addorg = tk.StringVar()
+addtel = tk.StringVar()
+addemail = tk.StringVar()
+addmob = tk.StringVar()
+inputname = Entry(addcontactframe, textvariable=addname)
+inputname.place(relx=0.36, rely=0.01, relwidth=0.60, relheight=0.15)
+inputorg = Entry(addcontactframe, textvariable=addorg)
+inputorg.place(relx=0.36, rely=0.15, relwidth=0.60, relheight=0.15)
+inputtel = Entry(addcontactframe, textvariable=addtel)
+inputtel.place(relx=0.36, rely=0.30, relwidth=0.60, relheight=0.15)
+inputemail = Entry(addcontactframe, textvariable=addemail)
+inputemail.place(relx=0.36, rely=0.45, relwidth=0.60, relheight=0.15)
+inputmob = Entry(addcontactframe, textvariable=addmob)
+inputmob.place(relx=0.36, rely=0.60, relwidth=0.60, relheight=0.15)
+addcontactbutton = Button(addcontactframe, text="Add Contact", command=addcontact)
+addcontactbutton.place(relx=0.01, rely=0.76, height=24, width=250)
 
 
 
+
+#END*****************************   TKINTER AND GUI STUFF      ********************************#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#*************************************RUNTIME STUFF *****************************#
 
 
 create_table()
