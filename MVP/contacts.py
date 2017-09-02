@@ -22,6 +22,10 @@ EMAIL
 MOBILE
 '''
 
+
+#*************************************DATABASE ********************************************
+
+
 #define DB connection
 conn = sqlite3.connect('contactsdb.db')
 c = conn.cursor()
@@ -77,8 +81,15 @@ def delete():
 	[print(row) for row in c.fetchall()]
 
 
+#END**********************************************************************************#
 
 
+
+
+
+
+
+#*****************************USER INTERFACE FUNCTIONS *********************************#
 
 # event handler 
 def contactselect(event):
@@ -99,8 +110,46 @@ def addcontact():
 	refreshlist()
 
 
+# Delete single record (Button command doesn't need event)
+def deletesingle():
+	if contactList.curselection():
+		contactitems = contactList.get(contactList.curselection())
+		name = contactitems[0]
+		org = contactitems[1]
+		tel = contactitems[2]
+		email = contactitems[3]
+		mob = contactitems[4]
+		c.execute('DELETE FROM allContacts WHERE name=\'' + name + '\' AND tel=\'' + tel + '\'')
+		print('Deleted Contact: ' + name + ' from: ' + org + ' email: ' + email + ' tel: ' + tel + ' mob: ' + mob)
+		conn.commit()
+		refreshlist()
+	else:
+		print("No Contact Selected!")
 
 
+def deleteorg():
+	if contactList.curselection():
+		contactitems = contactList.get(contactList.curselection())
+		name = contactitems[0]
+		org = contactitems[1]
+		tel = contactitems[2]
+		email = contactitems[3]
+		mob = contactitems[4]
+		c.execute('DELETE FROM allContacts WHERE org=\'' + org + '\'')
+		print('Deleted All Contacts from: ' + org)
+		conn.commit()
+		refreshlist()
+	else:
+		print("No Contact Selected!")
+
+
+def refreshlist():
+	read_from_db()
+	contactList.delete(0, END)
+	for i in range(len(data)):
+		contactList.insert(END, data[i])
+
+#END**********************************************************************************#
 
 
 
@@ -117,6 +166,8 @@ root.geometry("800x600+450+150")
 headerlabel = Label(root, text="All Contacts")
 
 headerlabel.place(relx=0.01, rely=0.01, relheight=0.03, relwidth=0.64)
+
+
 # Now the listbox
 contactList = Listbox(root)
 
@@ -163,18 +214,16 @@ addcontactbutton.place(relx=0.01, rely=0.76, height=24, width=250)
 
 
 
-
-#END*****************************   TKINTER AND GUI STUFF      ********************************#
-
-
-
-
-
-
-
+# Labelframe for delete buttons
+deletelabelframe = LabelFrame(root, text="Delete Entries")
+deletelabelframe.place(relx=0.66, rely=0.26, relheight=0.70, relwidth=0.33)
+deletebutton = Button(deletelabelframe, text="Delete Contact", command=deletesingle)
+deletebutton.place(relx=0.01, rely=0.01, height=24, width=250)
+deleteorgbutton = Button(deletelabelframe, text="Delete Organisation", command=deleteorg)
+deleteorgbutton.place(relx=0.01, rely=0.10, height=24, width=250)
 
 
-
+#END**********************************************************************************#
 
 
 
@@ -189,6 +238,7 @@ addcontactbutton.place(relx=0.01, rely=0.76, height=24, width=250)
 
 
 create_table()
+#populate a couple of rows, dynamically and with default
 dynamic_data_entry()
 dynamic_data_entry('Mr DaTa', 'S74RF1337', '622-1701-(3)', 'lt.cmdr.data@enterprise.starfleet.alpha.mil.wa', '07010101101')
 read_from_db()
