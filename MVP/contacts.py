@@ -118,13 +118,43 @@ contactList.place(relx=0.01, rely=0.04, relheight=0.98, relwidth=0.64)
 
 
 
+
+# A Label frame to group the add contact form.
+addcontactframe = LabelFrame(root, text="Add Contact")
+addcontactframe.place(relx=0.66, rely=0.01, relheight=0.25, relwidth=0.33)
+lblname = Label(addcontactframe, text="Name: ")
+lblname.place(relx=0.01, rely=0.01, relwidth=0.35, relheight=0.15)
+lblorg = Label(addcontactframe, text="Organisation: ")
+lblorg.place(relx=0.01, rely=0.15, relwidth=0.35, relheight=0.15)
+lbltel = Label(addcontactframe, text="Tel: ")
+lbltel.place(relx=0.01, rely=0.30, relwidth=0.35, relheight=0.15)
+lblemail = Label(addcontactframe, text="eMail: ")
+lblemail.place(relx=0.01, rely=0.45, relwidth=0.35, relheight=0.15)
+lblmob = Label(addcontactframe, text="Mobile: ")
+lblmob.place(relx=0.01, rely=0.60, relwidth=0.35, relheight=0.15)
+
+
+
+
+
+
+
 create_table()
 dynamic_data_entry()
 dynamic_data_entry('Mr DaTa', 'S74RF1337', '622-1701-(3)', 'lt.cmdr.data@enterprise.starfleet.alpha.mil.wa', '07010101101')
 read_from_db()
 
+
+#tidying up 
+def on_closing():
+	c.close()
+	conn.close()
+	root.destroy()
+
+
 for i in range (len(data)):
 	contactList.insert(END, data[i])
 
-
+# This line gives the form an on_close event.
+root.protocol("WM_DELETE_WINDOW", on_closing)
 root.mainloop() #need to have this window continuously running 
