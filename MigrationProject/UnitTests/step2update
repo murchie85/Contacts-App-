@@ -1,0 +1,10 @@
+UPDATE `address` SET `name`='new1',`organisation`='new1',`phone`='new1',`email`='new1',`mobile`='new1' WHERE name = 'Andy';
+UPDATE `address` SET `name`='new2',`organisation`='new2',`phone`='new2',`email`='new2',`mobile`='new2' WHERE name = 'Alison';
+UPDATE `address` SET `name`='new3',`organisation`='new3',`phone`='new3',`email`='new3',`mobile`='new3' WHERE name = 'Ben';
+UPDATE `address` SET `name`='new4',`organisation`='new4',`phone`='new4',`email`='new4',`mobile`='new4' WHERE name = 'Belinda';
+UPDATE `address` SET `name`='new5',`organisation`='new5',`phone`='new5',`email`='new5',`mobile`='new5' WHERE name = 'Clare';
+UPDATE `address` SET `name`='new6',`organisation`='new6',`phone`='new6',`email`='new6',`mobile`='new6' WHERE name = 'Cedric';
+UPDATE `address` SET `name`='new7',`organisation`='new7',`phone`='new7',`email`='new7',`mobile`='new7' WHERE name = 'Donald';
+UPDATE `address` SET `name`='new8',`organisation`='new8',`phone`='new8',`email`='new8',`mobile`='new8' WHERE name = 'Deardrie';
+UPDATE `address` SET `name`='new9',`organisation`='new9',`phone`='new9',`email`='new9',`mobile`='new9' WHERE name = 'Elisa';
+UPDATE `address` SET `name`='new10',`organisation`='new10',`phone`='new10',`email`='new10',`mobile`='new10' WHERE name = 'Edward';

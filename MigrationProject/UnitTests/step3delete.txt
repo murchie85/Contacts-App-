@@ -1,0 +1,10 @@
+DELETE FROM `address` WHERE name ='new1';
+DELETE FROM `address` WHERE name ='new2';
+DELETE FROM `address` WHERE name ='new3';
+DELETE FROM `address` WHERE name ='new4';
+DELETE FROM `address` WHERE name ='new5';
+DELETE FROM `address` WHERE name ='new6';
+DELETE FROM `address` WHERE name ='new7';
+DELETE FROM `address` WHERE name ='new8';
+DELETE FROM `address` WHERE name ='new9';
+DELETE FROM `address` WHERE name ='new10';
