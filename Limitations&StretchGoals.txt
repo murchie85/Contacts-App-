@@ -1,0 +1,14 @@
+PYTHON MVP
+===========
+
+Limitations 
+-----------
+Localised Database, easy to corrupt and lose data. 
+Form Overflow
+Duplicates
+
+Solutions
+---------
+Migration to Server
+Manually add in logic to check for duplicates
+Create Unique Indexes for Name + Surname Concatination, phone number and email 

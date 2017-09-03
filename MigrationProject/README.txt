@@ -6,7 +6,7 @@
 * SET UP INSTRUCTIONS :																					*
 * To run this, first move this entire folder to your HTDOCS directory                                   *
 * Turn on your apache webserver and mysql database                                                      *
-* nagivate to localhost/contacts/MigrationProject/address.php                                           *										     
+* nagivate to localhost/contacts/MigrationProject/index.php                                             *										     
 * *******************************************************************************************************
 * ACCEPTANCE CRITERIA: In this scenario the customer has asked for us to make the product more          *	
 * resilient. Specifically the customer is looking for a fault tolerant and highly available 			*

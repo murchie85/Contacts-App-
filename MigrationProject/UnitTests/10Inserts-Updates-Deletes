@@ -1,0 +1,1 @@
+INSERT INTO `address`(`name`, `organisation`, `phone`, `email`, `mobile`) VALUES ('Allan','TESCO','0776655433','allan@echo.com','0776655433')
