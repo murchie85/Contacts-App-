@@ -37,7 +37,7 @@ def create_table():
 
 # prototype function will be redundant
 def input_test():
-	c.execute("INSERT INTO allContacts VALUES('Adam McMurchie', 'Administrate', '01382 625789', 'murchie85@gmail.com', '07832141785' )")
+	c.execute("INSERT INTO allContacts VALUES('Jack Oneill', 'SG1', '01382 625789', 'JONEILL@gmail.com', '07832141785' )")
 	conn.commit()
 	c.close()
 	conn.close()
@@ -240,7 +240,7 @@ deleteorgbutton.place(relx=0.01, rely=0.10, height=24, width=250)
 create_table()
 #populate a couple of rows, dynamically and with default
 dynamic_data_entry()
-dynamic_data_entry('Mr DaTa', 'S74RF1337', '622-1701-(3)', 'lt.cmdr.data@enterprise.starfleet.alpha.mil.wa', '07010101101')
+dynamic_data_entry('DaTa', 'S74RF1337', '622-1701-(3)', 'lt.cmdr.data@enterprise.starfleet.alpha.mil.wa', '07010101101')
 read_from_db()
 
 

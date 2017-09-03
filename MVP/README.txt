@@ -3,6 +3,11 @@
 * REQUIREMENTS: SQLLITE3, PYTHON 2.7 & TKINTER															*
 * 																										*
 * *******************************************************************************************************
+* RUN INSTRUCTIONS:																						*
+* Ensuring python 2.7 installed, via terminal navigate to MVP directory then run the following          *
+* 								python contacts.py  											        *
+* Every instance will insert two different records, to disable comment out dynamic_data_entry()         *
+* *******************************************************************************************************
 * ACCEPTANCE CRITERIA:																					*
 * In this scenario, I imagine a customer has asked for a contacts app to be deployed to production as   *
 * soon as possible, and thus a minimum viable product -serverless approach is opted for.                *
