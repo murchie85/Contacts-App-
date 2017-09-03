@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrate Address Book | Welcome</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+
+  <body>
+
+    <!-- create heading and contact button to right -->
+    <div class = "row">
+      <div class = "large-6 columns">
+        <h1>Address Book</h1>
+      </div>
+
+      <!-- using pre built modals from foundation to do the heavy lifting -->
+      <div class="large-6 columns">
+
+        <a class = "add-btn button right small" data-reveal-id="myModal">Add Contact</a></div>
+
+
+        <div id="myModal" class="reveal-modal" data-reveal>
+          <h2>Add Contact</h2>
+          <form>
+
+                <div class="row">
+                  <div class="large-6 columns">
+                    <label>First Name
+                      <input type="text" placeholder="Enter First name" />
+                    </label>
+                  </div>
+                  <div class="large-6 columns">
+                    <label>Second Name
+                      <input type="text" placeholder="Enter Surname" />
+                    </label>
+                  </div>
+
+                        <div class="row">
+                          <div class="large-4 columns">
+                            <label>Email
+                              <input type="text" placeholder="Enter Email" />
+                            </label>
+                          </div>
+                          <div class="large-4 columns">
+                            <label>Phone Number
+                              <input type="text" placeholder="Enter Phone no" />
+                            </label>
+                          </div>
+                          <div class="large-4 columns">
+                            <label>Mobile
+                              <input type="text" placeholder="Enter Mobile no" />
+                            </label>
+                          </div>
+                        </div>
+
+                            <div class="row">
+                              <div class="large-12 columns">
+                                <label>Sex
+                                  <select>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                  </select>
+                                </label>
+                              </div>
+                            </div>
+                                <div class="row">
+                                  <div class="large-12 columns">
+                                    <label>Organisation
+                                      <input type="text" placeholder="Please enter Company name" />
+                                    </label>
+
+                                  </div>
+                                          <div class="row">
+                                            <div class="large-12 columns">
+                                              <label>Additional Information
+                                                <textarea placeholder="Enter additional information"></textarea>
+                                              </label>
+                                            </div>
+                                          </div>
+                                          <input type = "submit" class = "add-btn button right small" value = "submit">
+                                            <a class="close-reveal-modal">&#215;</a>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!-- LOADING IMAGE downloaded from ajax-loader generator -->
+
+    <div id="loaderImage">
+        <img src="img/ajax-loader.gif">
+    </div>
+
+
+
+    <!-- MAIN CONTENT -->
+    <div id="pageContent"></div>
+    
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

@@ -2,13 +2,39 @@ PYTHON MVP
 ===========
 
 Limitations 
------------
+—————————————
 Localised Database, easy to corrupt and lose data. 
 Form Overflow
 Duplicates
 
-Solutions
----------
+Future Improvements
+———————————————————
 Migration to Server
 Manually add in logic to check for duplicates
-Create Unique Indexes for Name + Surname Concatination, phone number and email 
+Create Unique Indexes for Name + Surname Concatenation, phone number and email 
+
+
+
+
+
+Migrated DB MVP
+===============
+
+
+Limitations 
+—————————————
+Basic GUI
+Form Overflows
+Duplicates
+
+Future Improvements
+———————————————————
+Host the App and DB
+Add pagination for form overflow
+Improve the GUI aesthetics with CSS, Bootstrap and foundations
+
+
+
+
+
+
