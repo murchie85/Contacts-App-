@@ -4,7 +4,8 @@ import string
 from tkinter import	 *
 import tkinter as tk
 
-'''
+'''             product vision 
+
 Please write a small web application that models an address book. Your solution should present a simple user--interface
 and should persist the data, so that it is available after restarting any processes.
 Your address book should list organisations and people. It should allow the user to see the names and contact details of
@@ -13,13 +14,6 @@ each organisation.
 Your address book should allow organisations and people to be created, edited and deleted.
 The address book is for use by a single person;; there is no need to build authentication and authorization in your submission.
 
-
-
-name
-organisation
-TEL
-EMAIL
-MOBILE
 '''
 
 
@@ -175,7 +169,7 @@ contactList = Listbox(root)
 contactList.bind("<<ListboxSelect>>", contactselect)
 
 
-contactList.place(relx=0.01, rely=0.04, relheight=0.98, relwidth=0.64)
+contactList.place(relx=0.01, rely=0.04, relheight=0.94, relwidth=0.64)
 
 
 # A Label frame to group the add contact form.
@@ -239,8 +233,8 @@ deleteorgbutton.place(relx=0.01, rely=0.10, height=24, width=250)
 
 create_table()
 #populate a couple of rows, dynamically and with default
-dynamic_data_entry()
-dynamic_data_entry('DaTa', 'S74RF1337', '622-1701-(3)', 'lt.cmdr.data@enterprise.starfleet.alpha.mil.wa', '07010101101')
+#dynamic_data_entry()
+#dynamic_data_entry('DaTa', 'S74RF1337', '622-1701-(3)', 'lt.cmdr.data@enterprise.starfleet.alpha.mil.wa', '07010101101')
 read_from_db()
 
 
